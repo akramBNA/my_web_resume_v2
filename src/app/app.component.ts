@@ -7,7 +7,7 @@ import { ContactMeComponent } from '../components/contact-me/contact-me.componen
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, TechnologiesComponent, ProjectsComponent, ContactMeComponent],
+  imports: [RouterOutlet, NavbarComponent, ProjectsComponent, ContactMeComponent, TechnologiesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
