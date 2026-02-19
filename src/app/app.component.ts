@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { TechnologiesComponent } from '../components/technologies/technologies.component';
+import { ProjectsComponent } from '../components/projects/projects.component';
+import { ContactMeComponent } from '../components/contact-me/contact-me.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent, TechnologiesComponent, ProjectsComponent, ContactMeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
