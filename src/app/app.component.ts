@@ -8,9 +8,15 @@ import { ContactMeComponent } from '../components/contact-me/contact-me.componen
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, ProjectsComponent, ContactMeComponent, TechnologiesComponent],
+  imports: [
+    RouterOutlet,
+    NavbarComponent,
+    ProjectsComponent,
+    ContactMeComponent,
+    TechnologiesComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
