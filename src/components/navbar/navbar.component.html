@@ -1,7 +1,7 @@
 <nav class="navbar">
 
     <div class="logo">
-        <div class="logo-placeholder">AB</div>
+        <a class="logo-placeholder">AB</a>
     </div>
 
     <div class="nav-links desktop">
@@ -12,15 +12,11 @@
     </div>
 
     <div class="actions desktop">
-        <fluent-button appearance="accent">
-            Download CV
-        </fluent-button>
+        <fluent-button appearance="accent">Download CV</fluent-button>
     </div>
 
     <div class="mobile-toggle mobile">
-        <button class="hamburger" (click)="toggleMenu()">
-            ☰
-        </button>
+        <button class="hamburger" (click)="toggleMenu()">☰</button>
     </div>
 
 </nav>
@@ -40,9 +36,7 @@
             <a class="mobile-item" (click)="closeMenu()">Contact</a>
             <a class="mobile-item" (click)="closeMenu()">See Resume</a>
 
-            <fluent-button appearance="accent" (click)="closeMenu()">
-                Download CV
-            </fluent-button>
+            <fluent-button appearance="accent" (click)="closeMenu()">Download CV</fluent-button>
         </div>
 
     </div>
