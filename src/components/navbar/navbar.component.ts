@@ -1,7 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HostListener } from '@angular/core';
 
-@HostListener('window:scroll', [])
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,6 +9,8 @@ import { HostListener } from '@angular/core';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NavbarComponent {
+  @HostListener('window:scroll', [])
+
   mobileOpen = false;
 
   onWindowScroll() {
@@ -22,7 +23,7 @@ export class NavbarComponent {
       navbar.classList.remove('scrolled');
     }
   }
-  
+
   scrollTo(sectionId: string) {
     const el = document.getElementById(sectionId);
     if (el) {
