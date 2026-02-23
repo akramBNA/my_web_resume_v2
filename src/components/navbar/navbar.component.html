@@ -1,1 +1,44 @@
-<p>navbar works!</p>
+<nav class="navbar">
+
+    <div class="logo">
+        <a class="logo-placeholder">AB</a>
+    </div>
+
+    <div class="nav-links desktop">
+        <a class="nav-item">About</a>
+        <a class="nav-item">Technologies</a>
+        <a class="nav-item">Contact</a>
+        <a class="nav-item">See Resume</a>
+    </div>
+
+    <div class="actions desktop">
+        <fluent-button appearance="accent">Download CV</fluent-button>
+    </div>
+
+    <div class="mobile-toggle mobile">
+        <button class="hamburger" (click)="toggleMenu()">☰</button>
+    </div>
+
+</nav>
+
+<div class="mobile-overlay" [class.open]="mobileOpen">
+
+    <div class="mobile-panel">
+
+        <div class="mobile-header">
+            <span>Menu</span>
+            <button (click)="closeMenu()">✕</button>
+        </div>
+
+        <div class="mobile-links">
+            <a class="mobile-item" (click)="closeMenu()">About</a>
+            <a class="mobile-item" (click)="closeMenu()">Technologies</a>
+            <a class="mobile-item" (click)="closeMenu()">Contact</a>
+            <a class="mobile-item" (click)="closeMenu()">See Resume</a>
+
+            <fluent-button appearance="accent" (click)="closeMenu()">Download CV</fluent-button>
+        </div>
+
+    </div>
+
+</div>

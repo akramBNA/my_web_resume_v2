@@ -1,4 +1,3 @@
-// import { provideFluentDesignSystem } from '@fluentui/web-components';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
@@ -7,13 +6,15 @@ import {
   provideFluentDesignSystem,
   fluentButton,
   fluentCard,
-  fluentTextField
+  fluentTextField,
+  fluentDivider
 } from '@fluentui/web-components';
 
 provideFluentDesignSystem().register(
   fluentButton(),
   fluentCard(),
-  fluentTextField()
+  fluentTextField(),
+  fluentDivider()
 );
 
 bootstrapApplication(AppComponent, appConfig)
