@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  standalone: true,
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class NavbarComponent {
+  mobileOpen = false;
 
+  toggleMenu() {
+    this.mobileOpen = !this.mobileOpen;
+  }
+
+  closeMenu() {
+    this.mobileOpen = false;
+  }
 }

@@ -1,1 +1,50 @@
-<p>navbar works!</p>
+<nav class="navbar">
+
+  <div class="logo">
+    <div class="logo-placeholder">AB</div>
+  </div>
+
+  <div class="nav-links desktop">
+    <fluent-button appearance="stealth">About</fluent-button>
+    <fluent-button appearance="stealth">Technologies</fluent-button>
+    <fluent-button appearance="stealth">Contact</fluent-button>
+    <fluent-button appearance="stealth">See Resume</fluent-button>
+  </div>
+
+  <div class="actions desktop">
+    <fluent-button appearance="accent">
+      Download CV
+    </fluent-button>
+  </div>
+
+  <div class="mobile-toggle mobile">
+    <button class="hamburger" (click)="toggleMenu()">
+      ☰
+    </button>
+  </div>
+
+</nav>
+
+<div class="mobile-overlay" [class.open]="mobileOpen">
+
+  <div class="mobile-panel">
+
+    <div class="mobile-header">
+      <span>Menu</span>
+      <button (click)="closeMenu()">✕</button>
+    </div>
+
+    <div class="mobile-links">
+      <fluent-button appearance="stealth" (click)="closeMenu()">About</fluent-button>
+      <fluent-button appearance="stealth" (click)="closeMenu()">Technologies</fluent-button>
+      <fluent-button appearance="stealth" (click)="closeMenu()">Contact</fluent-button>
+      <fluent-button appearance="stealth" (click)="closeMenu()">See Resume</fluent-button>
+
+      <fluent-button appearance="accent" (click)="closeMenu()">
+        Download CV
+      </fluent-button>
+    </div>
+
+  </div>
+
+</div>
