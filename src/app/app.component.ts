@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { TechnologiesComponent } from '../components/technologies/technologies.component';
 import { ProjectsComponent } from '../components/projects/projects.component';
@@ -12,7 +12,7 @@ import { AboutMeComponent } from "../components/about-me/about-me.component";
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
+    // RouterOutlet,
     NavbarComponent,
     ProjectsComponent,
     ContactMeComponent,
