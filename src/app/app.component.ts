@@ -6,6 +6,7 @@ import { ProjectsComponent } from '../components/projects/projects.component';
 import { ContactMeComponent } from '../components/contact-me/contact-me.component';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { AboutMeComponent } from "../components/about-me/about-me.component";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { filter } from 'rxjs/operators';
     ProjectsComponent,
     ContactMeComponent,
     TechnologiesComponent,
-  ],
+    AboutMeComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
