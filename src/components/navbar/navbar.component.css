@@ -126,6 +126,9 @@ fluent-button::part(control) {
 }
 
 .mobile-header {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
   display: flex;
   justify-content: space-between;
   align-items: center;
