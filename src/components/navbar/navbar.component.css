@@ -91,6 +91,7 @@ fluent-button::part(control) {
 .mobile-overlay {
   position: fixed;
   inset: 0;
+  z-index: 3000;
   background: rgba(0, 0, 0, 0.6);
 
   opacity: 0;
@@ -113,6 +114,8 @@ fluent-button::part(control) {
 
   background: #111;
   padding: 2rem;
+
+  z-index: 3100;
 
   transform: translateX(100%);
   transition: transform 0.3s ease;
