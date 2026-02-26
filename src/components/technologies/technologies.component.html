@@ -1,1 +1,53 @@
-<p>technologies works!</p>
+<section class="technologies-section">
+
+  <div class="technologies-container">
+
+    <h2 class="section-title">Technologies</h2>
+
+    <!-- FRONTEND -->
+    <div class="tech-category">
+      <h3 class="category-title">Frontend</h3>
+      <div class="tech-grid">
+        <div class="tech-card" *ngFor="let tech of frontend">
+          <img [src]="tech.logo" [alt]="tech.name" />
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACKEND -->
+    <div class="tech-category">
+      <h3 class="category-title">Backend</h3>
+      <div class="tech-grid">
+        <div class="tech-card" *ngFor="let tech of backend">
+          <img [src]="tech.logo" [alt]="tech.name" />
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATABASE -->
+    <div class="tech-category">
+      <h3 class="category-title">Database</h3>
+      <div class="tech-grid">
+        <div class="tech-card" *ngFor="let tech of database">
+          <img [src]="tech.logo" [alt]="tech.name" />
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTING -->
+    <div class="tech-category">
+      <h3 class="category-title">Testing</h3>
+      <div class="tech-grid">
+        <div class="tech-card" *ngFor="let tech of testing">
+          <img [src]="tech.logo" [alt]="tech.name" />
+          <span>{{ tech.name }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
