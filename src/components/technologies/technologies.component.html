@@ -1,47 +1,24 @@
-<section class="technologies-section">
+<section id="technologies" class="technologies-section">
 
     <div class="technologies-container">
 
-        <h2 class="section-title">Technologies</h2>
+        <h2 class="section-title fade-in">Technologies</h2>
 
-        <div class="tech-category">
-            <h3 class="category-title">Frontend</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of frontend">
-                    <img [src]="tech.logo" [alt]="tech.name" />
-                    <span>{{ tech.name }}</span>
-                </div>
-            </div>
+        <div class="filter-bar fade-in">
+            <button (click)="setFilter('all')" [class.active]="activeFilter === 'all'">All</button>
+            <button (click)="setFilter('frontend')" [class.active]="activeFilter === 'frontend'">Frontend</button>
+            <button (click)="setFilter('backend')" [class.active]="activeFilter === 'backend'">Backend</button>
+            <button (click)="setFilter('db')" [class.active]="activeFilter === 'db'">Database</button>
+            <button (click)="setFilter('test')" [class.active]="activeFilter === 'test'">Testing</button>
         </div>
 
-        <div class="tech-category">
-            <h3 class="category-title">Backend</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of backend">
-                    <img [src]="tech.logo" [alt]="tech.name" />
-                    <span>{{ tech.name }}</span>
-                </div>
-            </div>
-        </div>
+        <div class="tech-grid">
 
-        <div class="tech-category">
-            <h3 class="category-title">Database</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of database">
-                    <img [src]="tech.logo" [alt]="tech.name" />
-                    <span>{{ tech.name }}</span>
-                </div>
+            <div class="tech-card fade-up" *ngFor="let tech of technologies" [class.hidden]="!isVisible(tech.category)">
+                <img [src]="tech.logo" [alt]="tech.name">
+                <span>{{ tech.name }}</span>
             </div>
-        </div>
 
-        <div class="tech-category">
-            <h3 class="category-title">Testing</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of testing">
-                    <img [src]="tech.logo" [alt]="tech.name" />
-                    <span>{{ tech.name }}</span>
-                </div>
-            </div>
         </div>
 
     </div>
