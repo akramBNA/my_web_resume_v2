@@ -1,22 +1,19 @@
-/* SECTION */
 .technologies-section {
   background-color: #0f0f0f;
   color: white;
   width: 100%;
   min-height: 100vh;
-  padding-top: 90px; /* space for sticky navbar */
+  padding-top: 90px;
   padding-bottom: 80px;
   display: flex;
   justify-content: center;
 }
 
-/* CONTAINER */
 .technologies-container {
   width: 90%;
   max-width: 1400px;
 }
 
-/* MAIN TITLE */
 .section-title {
   font-size: 2.5rem;
   font-weight: 600;
@@ -24,7 +21,6 @@
   text-align: center;
 }
 
-/* CATEGORY */
 .tech-category {
   margin-bottom: 70px;
 }
@@ -37,14 +33,12 @@
   padding-left: 12px;
 }
 
-/* GRID */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
 }
 
-/* CARD */
 .tech-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -62,23 +56,18 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* LOGO */
 .tech-card img {
   height: 45px;
   margin-bottom: 15px;
   object-fit: contain;
 }
 
-/* NAME */
 .tech-card span {
   display: block;
   font-size: 0.95rem;
   font-weight: 500;
 }
 
-/* -------- RESPONSIVENESS -------- */
-
-/* Tablets */
 @media (max-width: 992px) {
   .section-title {
     font-size: 2rem;
@@ -89,7 +78,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .technologies-section {
     padding-top: 80px;
@@ -104,7 +92,6 @@
   }
 }
 
-/* Ultra-wide screens */
 @media (min-width: 1600px) {
   .technologies-container {
     max-width: 1600px;
