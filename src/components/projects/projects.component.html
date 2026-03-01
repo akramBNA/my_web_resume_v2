@@ -1,36 +1,22 @@
-<section id="projects" class="projects-section" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
-
+<section id="projects" class="projects-section" (mouseenter)="pause()" (mouseleave)="resume()"
+    (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
     <h2 class="section-title">Projects</h2>
 
     <div class="carousel">
-
         <div class="project-card" *ngFor="let project of projects; let i = index" [class.active]="i === currentIndex"
             [class.left]="i === (currentIndex - 1 + projects.length) % projects.length"
-            [class.right]="i === (currentIndex + 1) % projects.length" (click)="openModal(project)">
-
-            <img [src]="project.image" [alt]="project.name">
+            [class.right]="i === (currentIndex + 1) % projects.length">
+            <img [src]="project.image" [alt]="project.name" />
 
             <div class="overlay">
                 <h3>{{ project.name }}</h3>
                 <p>{{ project.description }}</p>
             </div>
-
         </div>
-
     </div>
 
     <div class="dots">
-        <span *ngFor="let project of projects; let i = index" [class.active]="i === currentIndex" (click)="goTo(i)">
-        </span>
+        <span *ngFor="let project of projects; let i = index" [class.active]="i === currentIndex"
+            (click)="goTo(i)"></span>
     </div>
-
-    <div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
-        <div class="modal-content" (click)="$event.stopPropagation()">
-            <img [src]="selectedProject?.image">
-            <h3>{{ selectedProject?.name }}</h3>
-            <p>{{ selectedProject?.description }}</p>
-            <button (click)="closeModal()">Close</button>
-        </div>
-    </div>
-
 </section>
