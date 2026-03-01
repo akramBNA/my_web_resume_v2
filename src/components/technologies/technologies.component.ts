@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,36 +6,49 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './technologies.component.html',
-  styleUrls: ['./technologies.component.css']
+  styleUrls: ['./technologies.component.css'],
 })
 export class TechnologiesComponent {
-
-  activeFilter = 'all';
-
-  technologies = [
-    { name: 'Angular', category: 'frontend', logo: 'https://cdn.simpleicons.org/angular/white' },
-    { name: 'React', category: 'frontend', logo: 'https://cdn.simpleicons.org/react/white' },
-    { name: 'React Native', category: 'frontend', logo: 'https://cdn.simpleicons.org/react/white' },
-    { name: 'Next JS', category: 'frontend', logo: 'https://cdn.simpleicons.org/nextdotjs/white' },
-
-    { name: 'NodeJS', category: 'backend', logo: 'https://cdn.simpleicons.org/nodedotjs/white' },
-    { name: 'ExpressJS', category: 'backend', logo: 'https://cdn.simpleicons.org/express/white' },
-
-    { name: 'PostgreSQL', category: 'db', logo: 'https://cdn.simpleicons.org/postgresql/white' },
-    { name: 'MySQL', category: 'db', logo: 'https://cdn.simpleicons.org/mysql/white' },
-    { name: 'MongoDB', category: 'db', logo: 'https://cdn.simpleicons.org/mongodb/white' },
-    { name: 'Supabase', category: 'db', logo: 'https://cdn.simpleicons.org/supabase/white' },
-
-    { name: 'Postman', category: 'test', logo: 'https://cdn.simpleicons.org/postman/white' },
-    { name: 'Playwright', category: 'test', logo: 'https://cdn.simpleicons.org/playwright/white' },
-    { name: 'Cypress', category: 'test', logo: 'https://cdn.simpleicons.org/cypress/white' }
+  frontendTech = [
+    { name: 'Angular', logo: 'https://cdn.simpleicons.org/angular/white' },
+    { name: 'React', logo: 'https://cdn.simpleicons.org/react/white' },
+    { name: 'React Native', logo: 'https://cdn.simpleicons.org/react/white' },
+    { name: 'Next JS', logo: 'https://cdn.simpleicons.org/nextdotjs/white' },
   ];
 
-  setFilter(filter: string) {
-    this.activeFilter = filter;
-  }
+  backendTech = [
+    { name: 'NodeJS', logo: 'https://cdn.simpleicons.org/nodedotjs/white' },
+    { name: 'ExpressJS', logo: 'https://cdn.simpleicons.org/express/white' },
+    { name: 'Java', logo: 'https://cdn.simpleicons.org/openjdk/white' },
+    {
+      name: 'Spring Boot',
+      logo: 'https://cdn.simpleicons.org/springboot/white',
+    },
+    {
+      name: 'Socket.IO',
+      logo: 'https://cdn.simpleicons.org/socketdotio/white',
+    },
+    { name: 'RabbitMQ', logo: 'https://cdn.simpleicons.org/rabbitmq/white' },
+    { name: 'C', logo: 'https://cdn.simpleicons.org/c/white' },
+    { name: 'C++', logo: 'https://cdn.simpleicons.org/cplusplus/white' },
+  ];
 
-  isVisible(category: string) {
-    return this.activeFilter === 'all' || this.activeFilter === category;
-  }
+  dbTech = [
+    {
+      name: 'PostgreSQL',
+      logo: 'https://cdn.simpleicons.org/postgresql/white',
+    },
+    { name: 'MySQL', logo: 'https://cdn.simpleicons.org/mysql/white' },
+    { name: 'MongoDB', logo: 'https://cdn.simpleicons.org/mongodb/white' },
+    { name: 'Supabase', logo: 'https://cdn.simpleicons.org/supabase/white' },
+  ];
+
+  testTech = [
+    { name: 'Postman', logo: 'https://cdn.simpleicons.org/postman/white' },
+    {
+      name: 'Playwright',
+      logo: 'https://cdn.simpleicons.org/microsoftplaywright/white',
+    },
+    { name: 'Cypress', logo: 'https://cdn.simpleicons.org/cypress/white' },
+  ];
 }
