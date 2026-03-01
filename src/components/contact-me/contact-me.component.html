@@ -1,1 +1,30 @@
-<!-- <p>contact-me works!</p> -->
+<section id="contact" class="contact-section">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-text">
+            <p>
+                If you have a project in mind, want to know more about my skills,
+                or just want to say hi, please fill in this form. I will reply to you shortly.
+            </p>
+        </div>
+
+        <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="submitForm()">
+
+            <div class="name-fields">
+                <input type="text" formControlName="firstName" placeholder="First Name" />
+                <input type="text" formControlName="lastName" placeholder="Last Name" />
+            </div>
+
+            <input type="text" formControlName="subject" placeholder="Subject" />
+            <input type="email" formControlName="email" placeholder="Email" />
+            <textarea formControlName="message" placeholder="Message" rows="6"></textarea>
+
+            <fluent-button appearance="accent" type="submit">Send Message</fluent-button>
+        </form>
+
+    </div>
+
+</section>
