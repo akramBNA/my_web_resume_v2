@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormsModule,
@@ -14,6 +14,7 @@ import {
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ContactMeComponent {
   contactForm: FormGroup;
