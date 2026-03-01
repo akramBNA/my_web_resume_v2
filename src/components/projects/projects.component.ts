@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,69 +8,72 @@ import { CommonModule } from '@angular/common';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css'],
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   autoSlideInterval: any;
   startX = 0;
-  isModalOpen = false;
-  selectedProject: any = null;
+  isPaused = false;
 
   projects = [
     {
       name: 'Project One',
       description: 'Enterprise dashboard built with Angular & Fluent2.',
-      image: 'https://picsum.photos/1400/800?random=1',
+      image: 'https://picsum.photos/1600/900?random=1',
     },
     {
       name: 'Project Two',
       description: 'Real-time chat application using Socket.IO.',
-      image: 'https://picsum.photos/1400/800?random=2',
+      image: 'https://picsum.photos/1600/900?random=2',
     },
     {
       name: 'Project Three',
       description: 'Full-stack platform with Spring Boot & PostgreSQL.',
-      image: 'https://picsum.photos/1400/800?random=3',
+      image: 'https://picsum.photos/1600/900?random=3',
     },
   ];
 
   ngOnInit() {
     this.startAutoSlide();
+    this.observeSection();
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.autoSlideInterval);
   }
 
   startAutoSlide() {
     this.autoSlideInterval = setInterval(() => {
-      this.next();
+      if (!this.isPaused) this.next(false);
     }, 5000);
   }
 
-  resetAutoSlide() {
-    clearInterval(this.autoSlideInterval);
-    this.startAutoSlide();
-  }
-
-  next() {
+  next(reset = true) {
     this.currentIndex = (this.currentIndex + 1) % this.projects.length;
-    this.resetAutoSlide();
+    if (reset) this.restartAutoSlide();
   }
 
   prev() {
     this.currentIndex =
       (this.currentIndex - 1 + this.projects.length) % this.projects.length;
-    this.resetAutoSlide();
+    this.restartAutoSlide();
   }
 
   goTo(index: number) {
     this.currentIndex = index;
-    this.resetAutoSlide();
+    this.restartAutoSlide();
   }
 
-  openModal(project: any) {
-    this.selectedProject = project;
-    this.isModalOpen = true;
+  restartAutoSlide() {
+    clearInterval(this.autoSlideInterval);
+    this.startAutoSlide();
   }
 
-  closeModal() {
-    this.isModalOpen = false;
+  pause() {
+    this.isPaused = true;
+  }
+
+  resume() {
+    this.isPaused = false;
   }
 
   onTouchStart(event: TouchEvent) {
@@ -81,5 +84,31 @@ export class ProjectsComponent {
     const endX = event.changedTouches[0].clientX;
     if (this.startX - endX > 50) this.next();
     if (endX - this.startX > 50) this.prev();
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboard(event: KeyboardEvent) {
+    if (event.key === 'ArrowRight') this.next();
+    if (event.key === 'ArrowLeft') this.prev();
+  }
+
+  observeSection() {
+    const section = document.getElementById('projects');
+    const navLink = document.querySelector('a[href="#projects"]');
+
+    if (!section || !navLink) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          navLink.classList.add('active-nav');
+        } else {
+          navLink.classList.remove('active-nav');
+        }
+      },
+      { threshold: 0.6 },
+    );
+
+    observer.observe(section);
   }
 }
