@@ -38,17 +38,13 @@
   justify-content: center;
   width: 42px;
   height: 42px;
-  border-radius: 50%;
+  border-radius: 10px;
   font-size: 1.2rem;
   color: #fff;
   background: rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-}
-
-.social-icon:active {
-  transform: scale(0.95);
 }
 
 .social-icon.linkedin {
@@ -71,6 +67,10 @@
   color: #000000;
   transform: translateY(-4px);
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+.social-icon:active {
+  transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
