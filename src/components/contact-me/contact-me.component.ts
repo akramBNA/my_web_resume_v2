@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../environments/environment';
@@ -11,7 +11,8 @@ import { FluentButtonModule } from '@fluentui/web-components';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, FluentButtonModule],
   templateUrl: './contact-me.component.html',
-  styleUrls: ['./contact-me.component.css']
+  styleUrls: ['./contact-me.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ContactMeComponent {
   contactForm: FormGroup;
