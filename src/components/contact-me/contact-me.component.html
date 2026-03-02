@@ -1,1 +1,51 @@
-<!-- <p>contact-me works!</p> -->
+<section id="contact" class="contact-section">
+
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-text">
+            <p>
+                If you have a project in mind, want to know more about my skills,
+                or just want to say hi!<br> Please fill in this form.
+                I will reply to you shortly.
+            </p>
+        </div>
+
+        <form [formGroup]="contactForm" class="contact-form" (ngSubmit)="sendEmail()">
+
+            <div class="name-fields">
+                <label>
+                    First Name <span class="required">*</span>
+                    <input type="text" formControlName="firstName" placeholder="First Name" />
+                </label>
+                <label>
+                    Last Name <span class="required">*</span>
+                    <input type="text" formControlName="lastName" placeholder="Last Name" />
+                </label>
+            </div>
+
+            <label>
+                Subject <span class="required">*</span>
+                <input type="text" formControlName="subject" placeholder="Subject" />
+            </label>
+
+            <label>
+                Email <span class="required">*</span>
+                <input type="email" formControlName="email" placeholder="Email" />
+            </label>
+
+            <label>
+                Message <span class="required">*</span>
+                <textarea formControlName="message" placeholder="Message" rows="6"></textarea>
+            </label>
+
+            <fluent-button appearance="accent" type="submit" [disabled]="isLoading">
+                {{ isLoading ? 'Sending...' : 'Send Message' }}
+            </fluent-button>
+
+        </form>
+
+    </div>
+
+</section>
