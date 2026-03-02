@@ -28,7 +28,7 @@
 
 .footer-right {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: center;
 }
 
@@ -36,26 +36,37 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.social-icon img {
-  width: 20px;
-  height: 20px;
-  filter: invert(1);
+.social-icon.linkedin {
+  color: #0a66c2;
 }
 
-.social-icon:hover {
-  background: #fff;
+.social-icon.github {
+  color: #ffffff;
 }
 
-.social-icon:hover img {
-  filter: invert(0);
+.social-icon.linkedin:hover {
+  background: #0a66c2;
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(10, 102, 194, 0.4);
+}
+
+.social-icon.github:hover {
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {
