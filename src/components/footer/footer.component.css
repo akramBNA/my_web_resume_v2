@@ -47,6 +47,10 @@
   text-decoration: none;
 }
 
+.social-icon:active {
+  transform: scale(0.95);
+}
+
 .social-icon.linkedin {
   color: #0a66c2;
 }
