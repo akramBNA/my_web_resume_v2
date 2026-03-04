@@ -7,7 +7,7 @@
         <div class="contact-text">
             <p>
                 If you have a project in mind, want to know more about my skills,
-                or just want to say hi!<br> Please fill in this form.
+                or just want to say hi !<br> Please fill in this form.
                 I will reply to you shortly.
             </p>
         </div>
@@ -16,28 +16,33 @@
 
             <div class="name-fields">
                 <label>
-                    First Name <span class="required">*</span>
-                    <input type="text" formControlName="firstName" placeholder="First Name" />
+                    <span class="label-text">
+                        First Name <span class="required">*</span>
+                    </span> <input type="text" formControlName="firstName" placeholder="First Name" />
                 </label>
                 <label>
-                    Last Name <span class="required">*</span>
-                    <input type="text" formControlName="lastName" placeholder="Last Name" />
+                    <span class="label-text">
+                        Last Name <span class="required">*</span>
+                    </span> <input type="text" formControlName="lastName" placeholder="Last Name" />
                 </label>
             </div>
 
             <label>
-                Subject <span class="required">*</span>
-                <input type="text" formControlName="subject" placeholder="Subject" />
+                <span class="label-text">
+                    Subject <span class="required">*</span>
+                </span> <input type="text" formControlName="subject" placeholder="Subject" />
             </label>
 
             <label>
-                Email <span class="required">*</span>
-                <input type="email" formControlName="email" placeholder="Email" />
+                <span class="label-text">
+                    Email <span class="required">*</span>
+                </span> <input type="email" formControlName="email" placeholder="Email" />
             </label>
 
             <label>
-                Message <span class="required">*</span>
-                <textarea formControlName="message" placeholder="Message" rows="6"></textarea>
+                <span class="label-text">
+                    Message <span class="required">*</span>
+                </span> <textarea formControlName="message" placeholder="Message" rows="6"></textarea>
             </label>
 
             <fluent-button appearance="accent" type="submit" [disabled]="isLoading">
@@ -45,6 +50,10 @@
             </fluent-button>
 
         </form>
+
+        <div class="loading-overlay" *ngIf="isLoading">
+            <div class="spinner"></div>
+        </div>
 
     </div>
 
