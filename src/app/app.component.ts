@@ -8,6 +8,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AboutMeComponent } from "../components/about-me/about-me.component";
 import { FooterComponent } from "../components/footer/footer.component";
+import { ServicesComponent } from "../components/services/services.component";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { FooterComponent } from "../components/footer/footer.component";
     ContactMeComponent,
     TechnologiesComponent,
     AboutMeComponent,
-    FooterComponent
+    FooterComponent,
+    ServicesComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
