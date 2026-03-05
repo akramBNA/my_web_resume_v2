@@ -67,14 +67,14 @@
   opacity: 0.85;
 }
 
-.actions {
+/* .actions {
   display: flex;
 }
 
 fluent-button::part(control) {
   color: white;
   cursor: pointer;
-}
+} */
 
 .mobile {
   display: none;
