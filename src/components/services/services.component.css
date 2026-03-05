@@ -56,8 +56,10 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: #333;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  border-color: #2a2a2a;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.04);
 }
 
 .icon {
