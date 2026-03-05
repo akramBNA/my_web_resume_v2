@@ -7,6 +7,7 @@
     <div class="nav-links desktop">
         <a class="nav-item" routerLink="/about" (click)="scrollTo('about')">About</a>
         <a class="nav-item" routerLink="/technologies" (click)="scrollTo('technologies')">Technologies</a>
+        <a class="nav-item" routerLink="/services" (click)="scrollTo('services')">Services</a>
         <a class="nav-item" routerLink="/projects" (click)="scrollTo('projects')">Projects</a>
         <a class="nav-item" routerLink="/contact" (click)="scrollTo('contact')">Contact</a>
     </div>
@@ -33,6 +34,7 @@
         <div class="mobile-links">
             <a class="mobile-item" routerLink="/about" (click)="scrollTo('about'); closeMenu()">About</a>
             <a class="mobile-item" routerLink="/technologies" (click)="scrollTo('technologies'); closeMenu()">Technologies</a>
+            <a class="mobile-item" routerLink="/services" (click)="scrollTo('services'); closeMenu()">Services</a>
             <a class="mobile-item" routerLink="/projects" (click)="scrollTo('projects'); closeMenu()">Projects</a>
             <a class="mobile-item" routerLink="/contact" (click)="scrollTo('contact'); closeMenu()">Contact</a>
             <fluent-button appearance="accent" (click)="closeMenu()">Download CV</fluent-button>
