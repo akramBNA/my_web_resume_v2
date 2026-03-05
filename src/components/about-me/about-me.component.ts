@@ -33,4 +33,14 @@ export class AboutMeComponent implements OnInit {
       }
     }, this.typingSpeed);
   }
+
+  scrollToContact() {
+    const el = document.getElementById('contact');
+    if (el) {
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
 }
