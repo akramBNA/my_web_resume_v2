@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
-import { TechnologiesComponent } from '../components/technologies/technologies.component';
+// import { TechnologiesComponent } from '../components/technologies/technologies.component';
 import { ProjectsComponent } from '../components/projects/projects.component';
 import { ContactMeComponent } from '../components/contact-me/contact-me.component';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
@@ -18,7 +18,7 @@ import { ServicesComponent } from "../components/services/services.component";
     NavbarComponent,
     ProjectsComponent,
     ContactMeComponent,
-    TechnologiesComponent,
+    // TechnologiesComponent,
     AboutMeComponent,
     FooterComponent,
     ServicesComponent
