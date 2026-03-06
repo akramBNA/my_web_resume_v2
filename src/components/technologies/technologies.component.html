@@ -1,49 +1,21 @@
 <section id="technologies" class="technologies-section">
 
-    <div class="technologies-container">
+  <div class="technologies-container">
 
-        <h2 class="section-title fade-in">Technologies</h2>
+    <h2 class="section-title">Technologies</h2>
 
-        <div class="group fade-up">
-            <h3 class="group-title">Frontend</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of frontendTech">
-                    <img [src]="tech.logo" [alt]="tech.name">
-                    <div class="tooltip">{{ tech.name }}</div>
-                </div>
-            </div>
-        </div>
+    <div class="tech-grid">
 
-        <div class="group fade-up">
-            <h3 class="group-title">Backend</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of backendTech">
-                    <img [src]="tech.logo" [alt]="tech.name">
-                    <div class="tooltip">{{ tech.name }}</div>
-                </div>
-            </div>
-        </div>
+      <div class="tech-card" *ngFor="let tech of techs">
 
-        <div class="group fade-up">
-            <h3 class="group-title">Database</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of dbTech">
-                    <img [src]="tech.logo" [alt]="tech.name">
-                    <div class="tooltip">{{ tech.name }}</div>
-                </div>
-            </div>
-        </div>
+        <img [src]="tech.logo" [alt]="tech.name">
 
-        <div class="group fade-up">
-            <h3 class="group-title">Testing</h3>
-            <div class="tech-grid">
-                <div class="tech-card" *ngFor="let tech of testTech">
-                    <img [src]="tech.logo" [alt]="tech.name">
-                    <div class="tooltip">{{ tech.name }}</div>
-                </div>
-            </div>
-        </div>
+        <h3>{{ tech.name }}</h3>
+
+      </div>
 
     </div>
+
+  </div>
 
 </section>
