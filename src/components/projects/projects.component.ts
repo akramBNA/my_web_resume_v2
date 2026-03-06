@@ -9,24 +9,34 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent implements OnInit {
+  revealed = false;
+  selectedProject: any = null;
 
   projects = [
     {
       name: 'SOHABA Showcase Website',
-      description: 'Angular, Material Design',
+      tech: ['Angular', 'Material Design'],
       image: 'assets/PRJ-01.png',
     },
     {
       name: 'SOHABA Dashboard',
-      description: 'Angular, Node.js, PostgreSQL',
+      tech: ['Angular', 'Node.js', 'PostgreSQL'],
       image: 'assets/PRJ-02.png',
     },
     {
       name: 'ABC School website & dashboard',
-      description: 'Angular, Node.js, PostgreSQL',
+      tech: ['Angular', 'Node.js', 'PostgreSQL'],
       image: 'assets/PRJ-03.png',
     },
   ];
+
+  openProject(project:any){
+    this.selectedProject = project;
+  }
+
+  closeProject(){
+    this.selectedProject = null;
+  }
 
   ngOnInit() {
     this.observeSection();
