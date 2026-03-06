@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-me',
@@ -12,6 +13,8 @@ export class AboutMeComponent implements OnInit {
   fullText = 'Full-Stack JavaScript Developer';
   typedText = '';
   typingSpeed = 60;
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.loading = false;
@@ -34,13 +37,17 @@ export class AboutMeComponent implements OnInit {
     }, this.typingSpeed);
   }
 
-  scrollToContact() {
-    const el = document.getElementById('contact');
-    if (el) {
-      el.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+  scrollTo(sectionIdOrRoute: string, isRoute = false) {
+    if (isRoute) {
+      this.router.navigate([sectionIdOrRoute]);
+    } else {
+      const el = document.getElementById(sectionIdOrRoute);
+      if (el) {
+        el.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     }
   }
 }

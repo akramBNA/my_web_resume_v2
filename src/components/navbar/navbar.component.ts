@@ -1,20 +1,34 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HostListener } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NavbarComponent {
-  @HostListener('window:scroll', [])
-
   mobileOpen = false;
 
+  constructor(private router: Router) {}
+
+  scrollTo(sectionIdOrRoute: string, isRoute = false) {
+    if (isRoute) {
+      this.router.navigate([sectionIdOrRoute]);
+    } else {
+      this.router.navigate(['/'], { fragment: sectionIdOrRoute });
+    }
+    this.closeMenu();
+  }
+
+  toggleMenu() {
+    this.mobileOpen = !this.mobileOpen;
+  }
+
+  closeMenu() {
+    this.mobileOpen = false;
+  }
+
+  @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollTop = window.scrollY;
     const navbar = document.querySelector('.navbar') as HTMLElement;
@@ -24,20 +38,5 @@ export class NavbarComponent {
     } else {
       navbar.classList.remove('scrolled');
     }
-  }
-
-  scrollTo(sectionId: string) {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  toggleMenu() {
-    this.mobileOpen = !this.mobileOpen;
-  }
-
-  closeMenu() {
-    this.mobileOpen = false;
   }
 }
