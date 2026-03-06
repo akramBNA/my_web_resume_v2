@@ -11,7 +11,7 @@
             <a class="nav-item" (click)="scrollTo('technologies')">Technologies</a>
             <a class="nav-item" (click)="scrollTo('projects')">Projects</a>
             <a class="nav-item" (click)="scrollTo('contact')">Contact</a>
-            <a class="nav-item" routerLink="/resume">Resume</a>
+            <a class="nav-item" (click)="scrollTo('resume', true)">Resume</a>
         </div>
 
         <div class="mobile-toggle mobile">
@@ -30,12 +30,12 @@
         </div>
 
         <div class="mobile-links">
-            <a class="mobile-item" (click)="scrollTo('about'); closeMenu()">About</a>
-            <a class="mobile-item" (click)="scrollTo('services'); closeMenu()">Services</a>
-            <a class="mobile-item" (click)="scrollTo('technologies'); closeMenu()">Technologies</a>
-            <a class="mobile-item" (click)="scrollTo('projects'); closeMenu()">Projects</a>
-            <a class="mobile-item" (click)="scrollTo('contact'); closeMenu()">Contact</a>
-            <a class="mobile-item" routerLink="/resume" (click)="closeMenu()">Resume</a>
+            <a class="mobile-item" (click)="scrollTo('about')">About</a>
+            <a class="mobile-item" (click)="scrollTo('services')">Services</a>
+            <a class="mobile-item" (click)="scrollTo('technologies')">Technologies</a>
+            <a class="mobile-item" (click)="scrollTo('projects')">Projects</a>
+            <a class="mobile-item" (click)="scrollTo('contact')">Contact</a>
+            <a class="mobile-item" (click)="scrollTo('resume', true)">Resume</a>
         </div>
 
     </div>

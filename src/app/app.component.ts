@@ -1,28 +1,16 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from '../components/navbar/navbar.component';
-import { TechnologiesComponent } from '../components/technologies/technologies.component';
-import { ProjectsComponent } from '../components/projects/projects.component';
-import { ContactMeComponent } from '../components/contact-me/contact-me.component';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import {
+  Router,
+  NavigationEnd,
+  ActivatedRoute,
+  RouterOutlet,
+} from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { AboutMeComponent } from "../components/about-me/about-me.component";
-import { FooterComponent } from "../components/footer/footer.component";
-import { ServicesComponent } from "../components/services/services.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    // RouterOutlet,
-    NavbarComponent,
-    ProjectsComponent,
-    ContactMeComponent,
-    TechnologiesComponent,
-    AboutMeComponent,
-    FooterComponent,
-    ServicesComponent
-],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

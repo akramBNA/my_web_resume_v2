@@ -11,8 +11,13 @@ export class NavbarComponent {
 
   constructor(private router: Router) {}
 
-  scrollTo(sectionId: string) {
-    this.router.navigate(['/'], { fragment: sectionId });
+  scrollTo(sectionIdOrRoute: string, isRoute = false) {
+    if (isRoute) {
+      this.router.navigate([sectionIdOrRoute]);
+    } else {
+      this.router.navigate(['/'], { fragment: sectionIdOrRoute });
+    }
+    this.closeMenu();
   }
 
   toggleMenu() {
