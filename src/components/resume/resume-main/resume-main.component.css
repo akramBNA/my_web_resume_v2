@@ -1,21 +1,19 @@
 .resume-temp-section {
-
   background: #000;
   color: #fff;
 
-  min-height: calc(100vh - 70px);
+  /* FULL viewport height */
+  height: 100vh;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   padding: 2rem;
-
   font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
 }
 
 .resume-container {
-
   max-width: 750px;
   text-align: center;
 
@@ -25,7 +23,7 @@
 }
 
 .construction-icon {
-  width: 120px;
+  font-size: 6rem;
   margin-bottom: 1.5rem;
   opacity: 0.9;
 }
@@ -42,7 +40,6 @@
   opacity: 0.8;
 
   max-width: 600px;
-
   margin-bottom: 2.5rem;
 }
 
@@ -55,18 +52,12 @@
 
 .btn {
   padding: 0.7rem 1.6rem;
-
   border-radius: 8px;
-
   font-size: 0.9rem;
   font-weight: 500;
-
   text-decoration: none;
-
   border: none;
-
   cursor: pointer;
-
   transition: all 0.2s ease;
 }
 
@@ -79,7 +70,6 @@
   background: #e74c3c;
 }
 
-
 .download-btn {
   background: #0078d4;
   color: #fff;
@@ -90,13 +80,11 @@
 }
 
 @media (max-width: 600px) {
-
   .construction-icon {
-    width: 90px;
+    font-size: 4.5rem;
   }
 
   .description {
     font-size: 0.95rem;
   }
-
 }
