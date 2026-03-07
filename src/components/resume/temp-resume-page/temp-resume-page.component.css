@@ -1,0 +1,107 @@
+.resume-temp-section {
+  background: #000;
+  color: #fff;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+  font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
+}
+
+.resume-container {
+  max-width: 750px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.construction-icon {
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  width: 180px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.back-btn {
+  background: #c0392b;
+  color: #fff;
+}
+
+.back-btn:hover {
+  background: #e74c3c;
+}
+
+.download-btn {
+  background: #0078d4;
+  color: #fff;
+}
+
+.download-btn:hover {
+  background: #106ebe;
+}
+
+@media (max-width: 600px) {
+  .construction-icon {
+    font-size: 4.5rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
