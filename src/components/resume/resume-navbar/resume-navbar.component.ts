@@ -3,21 +3,46 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resume-navbar',
-  imports: [],
   templateUrl: './resume-navbar.component.html',
   styleUrl: './resume-navbar.component.css',
 })
 export class ResumeNavbarComponent {
+
   mobileOpen = false;
+
+  sections = [
+    'contact-details',
+    'experience',
+    'internships',
+    'education',
+    'skills',
+    'certificates',
+    'languages'
+  ];
+
+  activeSection = 'contact-details';
 
   constructor(private router: Router) {}
 
-  scrollTo(sectionIdOrRoute: string, isRoute = false) {
-    if (isRoute) {
-      this.router.navigate([sectionIdOrRoute]);
-    } else {
-      this.router.navigate(['/'], { fragment: sectionIdOrRoute });
+  scrollTo(sectionId: string) {
+
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      this.router.navigate([], {
+        fragment: sectionId,
+        replaceUrl: true
+      });
+
+      this.activeSection = sectionId;
     }
+
     this.closeMenu();
   }
 
@@ -31,13 +56,22 @@ export class ResumeNavbarComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const scrollTop = window.scrollY;
-    const navbar = document.querySelector('.navbar') as HTMLElement;
 
-    if (scrollTop > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    const scrollPosition = window.scrollY + 120;
+
+    for (let section of this.sections) {
+
+      const element = document.getElementById(section);
+
+      if (element) {
+
+        const offsetTop = element.offsetTop;
+        const offsetBottom = offsetTop + element.offsetHeight;
+
+        if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+          this.activeSection = section;
+        }
+      }
     }
   }
 }
