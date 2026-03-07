@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   styleUrl: './resume-navbar.component.css',
 })
 export class ResumeNavbarComponent {
-
   mobileOpen = false;
 
   sections = [
@@ -17,7 +16,7 @@ export class ResumeNavbarComponent {
     'education',
     'skills',
     'certificates',
-    'languages'
+    'languages',
   ];
 
   activeSection = 'contact-details';
@@ -25,19 +24,17 @@ export class ResumeNavbarComponent {
   constructor(private router: Router) {}
 
   scrollTo(sectionId: string) {
-
     const element = document.getElementById(sectionId);
 
     if (element) {
-
       element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
 
       this.router.navigate([], {
         fragment: sectionId,
-        replaceUrl: true
+        replaceUrl: true,
       });
 
       this.activeSection = sectionId;
@@ -56,15 +53,12 @@ export class ResumeNavbarComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-
     const scrollPosition = window.scrollY + 120;
 
     for (let section of this.sections) {
-
       const element = document.getElementById(section);
 
       if (element) {
-
         const offsetTop = element.offsetTop;
         const offsetBottom = offsetTop + element.offsetHeight;
 
