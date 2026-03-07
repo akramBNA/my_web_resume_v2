@@ -38,6 +38,15 @@
   cursor: pointer;
   text-decoration: none;
   position: relative;
+  opacity: 0.75;
+}
+
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  opacity: 1;
 }
 
 .nav-item::after {
