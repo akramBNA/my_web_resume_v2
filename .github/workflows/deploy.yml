@@ -47,4 +47,4 @@ jobs:
           branch: gh-pages
           folder: dist/my-web-resume-v2/browser
           clean: true
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
