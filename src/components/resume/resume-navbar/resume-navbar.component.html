@@ -6,13 +6,13 @@
 
         <div class="nav-links desktop">
 
-            <a class="nav-item" (click)="scrollTo('contact-details')">Contact</a>
-            <a class="nav-item" (click)="scrollTo('experience')">Experience</a>
-            <a class="nav-item" (click)="scrollTo('internships')">Internships</a>
-            <a class="nav-item" (click)="scrollTo('education')">Education</a>
-            <a class="nav-item" (click)="scrollTo('skills')">Skills</a>
-            <a class="nav-item" (click)="scrollTo('certificates')">Certificates</a>
-            <a class="nav-item" (click)="scrollTo('languages')">Languages</a>
+            <a class="nav-item" [class.active]="activeSection === 'contact-details'" (click)="scrollTo('contact-details')">Contact</a>
+            <a class="nav-item" [class.active]="activeSection === 'experience'" (click)="scrollTo('experience')">Experience</a>
+            <a class="nav-item" [class.active]="activeSection === 'internships'" (click)="scrollTo('internships')">Internships</a>
+            <a class="nav-item" [class.active]="activeSection === 'education'" (click)="scrollTo('education')">Education</a>
+            <a class="nav-item" [class.active]="activeSection === 'skills'" (click)="scrollTo('skills')">Skills</a>
+            <a class="nav-item" [class.active]="activeSection === 'certificates'" (click)="scrollTo('certificates')">Certificates</a>
+            <a class="nav-item" [class.active]="activeSection === 'languages'" (click)="scrollTo('languages')">Languages</a>
 
         </div>
 
@@ -50,9 +50,7 @@
 
             <div class="mobile-actions">
                 <a class="btn back-btn" routerLink="/">Go Back</a>
-                <a class="btn download-btn" href="assets/Akram_Benaoun_CV.pdf" download>
-                    Download CV
-                </a>
+                <a class="btn download-btn" href="assets/Akram_Benaoun_CV.pdf" download>Download CV</a>
             </div>
 
         </div>
