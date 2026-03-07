@@ -58,9 +58,9 @@
 }
 
 .btn {
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
   font-weight: 600;
 
   text-decoration: none;
@@ -117,10 +117,12 @@
 
 .mobile-panel {
   position: absolute;
-  right: 0;
-  top: 0;
 
-  height: 100%;
+  right: 0;
+  top: 70px;
+
+  height: calc(100% - 70px);
+
   width: 280px;
 
   background: #111;
