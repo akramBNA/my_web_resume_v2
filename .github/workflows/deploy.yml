@@ -1,50 +1,50 @@
-name: Deploy Angular App to GitHub Pages
+# name: Deploy Angular App to GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4
 
-      - name: 🔧 Set Up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "npm"
+#       - name: 🔧 Set Up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#           cache: "npm"
 
-      - name: Install Dependencies
-        run: npm install --legacy-peer-deps
+#       - name: Install Dependencies
+#         run: npm install --legacy-peer-deps
 
-      - name: Set environment variables
-        run: |
-          echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> $GITHUB_ENV
-          echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
-          echo "EMAILJS_AUTO_REPLY_TEMPLATE_ID=${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}" >> $GITHUB_ENV
-          echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
-          echo "GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
+#       - name: Set environment variables
+#         run: |
+#           echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> $GITHUB_ENV
+#           echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
+#           echo "EMAILJS_AUTO_REPLY_TEMPLATE_ID=${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}" >> $GITHUB_ENV
+#           echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
+#           echo "GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
 
-      - name: Replace environment.prod.ts values
-        run: |
-            sed -i 's|<EMAILJS_SERVICE_ID>|${{ secrets.EMAILJS_SERVICE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_TEMPLATE_ID>|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_AUTO_REPLY_TEMPLATE_ID>|${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_PUBLIC_KEY>|${{ secrets.EMAILJS_PUBLIC_KEY }}|g' src/environments/environment.prod.ts
-            sed -i 's|<GOOGLE_ANALYTICS_ID>|${{ secrets.GOOGLE_ANALYTICS_ID }}|g' src/environments/environment.prod.ts
+#       - name: Replace environment.prod.ts values
+#         run: |
+#             sed -i 's|<EMAILJS_SERVICE_ID>|${{ secrets.EMAILJS_SERVICE_ID }}|g' src/environments/environment.prod.ts
+#             sed -i 's|<EMAILJS_TEMPLATE_ID>|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
+#             sed -i 's|<EMAILJS_AUTO_REPLY_TEMPLATE_ID>|${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
+#             sed -i 's|<EMAILJS_PUBLIC_KEY>|${{ secrets.EMAILJS_PUBLIC_KEY }}|g' src/environments/environment.prod.ts
+#             sed -i 's|<GOOGLE_ANALYTICS_ID>|${{ secrets.GOOGLE_ANALYTICS_ID }}|g' src/environments/environment.prod.ts
 
-      - name: 🏗️ Build Angular App
-        run: npm run build -- --configuration=production
+#       - name: 🏗️ Build Angular App
+#         run: npm run build -- --configuration=production
 
-      - name: 🚀 Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist/my-web-resume-v2/browser
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+#       - name: 🚀 Deploy to GitHub Pages
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           branch: gh-pages
+#           folder: dist/my-web-resume-v2/browser
+#           clean: true
+#           token: ${{ secrets.GITHUB_TOKEN }}
