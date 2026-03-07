@@ -1,0 +1,62 @@
+<nav class="resume-navbar">
+
+    <div class="navbar-inner">
+
+        <div class="left-action"><a class="btn back-btn" routerLink="/">Go Back</a></div>
+
+        <div class="nav-links desktop">
+
+            <a class="nav-item" (click)="scrollTo('contact-details')">Contact</a>
+            <a class="nav-item" (click)="scrollTo('experience')">Experience</a>
+            <a class="nav-item" (click)="scrollTo('internships')">Internships</a>
+            <a class="nav-item" (click)="scrollTo('education')">Education</a>
+            <a class="nav-item" (click)="scrollTo('skills')">Skills</a>
+            <a class="nav-item" (click)="scrollTo('certificates')">Certificates</a>
+            <a class="nav-item" (click)="scrollTo('languages')">Languages</a>
+
+        </div>
+
+        <div class="right-action desktop">
+            <a class="btn download-btn" href="assets/Akram_Benaoun_CV.pdf" download>Download CV</a>
+        </div>
+
+        <div class="mobile-toggle mobile">
+            <button class="hamburger" (click)="toggleMenu()">☰</button>
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="mobile-overlay" [class.open]="mobileOpen">
+
+    <div class="mobile-panel">
+
+        <div class="mobile-header">
+            <span>Resume Menu</span>
+            <button (click)="closeMenu()">✕</button>
+        </div>
+
+        <div class="mobile-links">
+
+            <a class="mobile-item" (click)="scrollTo('contact-details')">Contact</a>
+            <a class="mobile-item" (click)="scrollTo('experience')">Experience</a>
+            <a class="mobile-item" (click)="scrollTo('internships')">Internships</a>
+            <a class="mobile-item" (click)="scrollTo('education')">Education</a>
+            <a class="mobile-item" (click)="scrollTo('skills')">Skills</a>
+            <a class="mobile-item" (click)="scrollTo('certificates')">Certificates</a>
+            <a class="mobile-item" (click)="scrollTo('languages')">Languages</a>
+
+            <div class="mobile-actions">
+                <a class="btn back-btn" routerLink="/">Go Back</a>
+                <a class="btn download-btn" href="assets/Akram_Benaoun_CV.pdf" download>
+                    Download CV
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
