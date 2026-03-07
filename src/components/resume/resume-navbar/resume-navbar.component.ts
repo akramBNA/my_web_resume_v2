@@ -34,6 +34,7 @@ export class ResumeNavbarComponent {
 
       this.router.navigate([], {
         fragment: sectionId,
+        queryParamsHandling: 'preserve',
         replaceUrl: true,
       });
 
