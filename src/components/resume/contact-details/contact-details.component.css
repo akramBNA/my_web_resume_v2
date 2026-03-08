@@ -22,7 +22,18 @@
 .section-title {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  margin: 12px auto 0;
 }
 
 .contact-grid {
