@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-// import { TempResumePageComponent } from '../temp-resume-page/temp-resume-page.component';
-// import { ResumeNavbarComponent } from '../resume-navbar/resume-navbar.component';
 import { ContactDetailsComponent } from '../contact-details/contact-details.component';
 import { ExperienceComponent } from '../experience/experience.component';
-// import { ResumeFooterComponent } from '../resume-footer/resume-footer.component';
+import { InternshipsComponent } from '../internships/internships.component';
 
 @Component({
   selector: 'app-resume-main',
-  imports: [ContactDetailsComponent, ExperienceComponent],
+  imports: [ContactDetailsComponent, ExperienceComponent, InternshipsComponent],
   templateUrl: './resume-main.component.html',
   styleUrl: './resume-main.component.css',
 })
