@@ -10,12 +10,6 @@ import { Chart } from 'chart.js/auto';
   styleUrls: ['./languages.component.css'],
 })
 export class LanguagesComponent implements AfterViewInit, OnDestroy {
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
   private chart: Chart | null = null;
   private donutCharts: Chart[] = [];
 
@@ -29,6 +23,14 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
   ];
 
   selectedKind: 'radar' | 'bar' | 'donut' = 'donut';
+
+  ngAfterViewInit(): void {
+    this.createChart(this.selectedKind);
+  }
+
+  ngOnDestroy(): void {
+    this.destroyCharts();
+  }
 
   createChart(kind: 'radar' | 'bar' | 'donut') {
     this.selectedKind = kind;
@@ -45,7 +47,7 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
                 label: 'Proficiency (%)',
                 data: this.values,
                 backgroundColor: 'rgba(255,255,255,0.1)',
-                borderColor: 'rgba(255,255,255,0.9)',
+                borderColor: this.colors[0],
                 borderWidth: 2,
                 pointBackgroundColor: this.colors,
                 pointBorderColor: '#000',
@@ -130,6 +132,7 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
             `donutChart${i}`,
           ) as HTMLCanvasElement;
           if (!ctx) return;
+
           const chart = new Chart(ctx, {
             type: 'doughnut',
             data: {
@@ -164,9 +167,7 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
                       }
                       return '';
                     },
-                    title: function () {
-                      return '';
-                    },
+                    title: () => '',
                   },
                 },
               },
