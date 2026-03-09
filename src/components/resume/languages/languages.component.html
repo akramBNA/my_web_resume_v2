@@ -1,1 +1,20 @@
-<p>languages works!</p>
+<section id="languages" class="languages-section">
+    <h2 class="section-title">Spoken Languages</h2>
+
+    <div class="chart-buttons">
+        <button (click)="createChart('radar')" [class.active]="selectedKind==='radar'">Radar</button>
+        <button (click)="createChart('bar')" [class.active]="selectedKind==='bar'">Vertical Bar</button>
+        <button (click)="createChart('donut')" [class.active]="selectedKind==='donut'">Donut</button>
+    </div>
+
+    <div *ngIf="selectedKind !== 'donut'" class="chart-container">
+        <canvas id="languagesCombinedChart"></canvas>
+    </div>
+
+    <div *ngIf="selectedKind === 'donut'" class="donut-grid">
+        <div *ngFor="let lang of labels; let i = index" class="donut-card">
+            <canvas id="donutChart{{i}}"></canvas>
+            <p>{{ lang }}</p>
+        </div>
+    </div>
+</section>
