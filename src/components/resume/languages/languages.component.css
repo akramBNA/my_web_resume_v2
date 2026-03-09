@@ -10,14 +10,16 @@
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
   position: relative;
 }
+
 .section-title::after {
   content: "";
-  width: 70px;
+  width: 80px;
   height: 3px;
   background: #fff;
   display: block;
@@ -61,17 +63,21 @@
   gap: 2rem;
   justify-items: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
 }
 .donut-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 160px;
-  height: 200px;
+  height: 180px;
+}
+.donut-card canvas {
+  width: 100% !important;
+  height: auto !important;
 }
 .donut-card p {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-weight: 600;
   color: #fff;
   text-align: center;
@@ -82,25 +88,18 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
-  .chart-container {
-    height: 300px;
-  }
-  .donut-card {
-    width: 140px;
-    height: 180px;
-  }
-}
-
-@media (max-width: 600px) {
-  .donut-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
-  }
-  .chart-container {
-    height: 260px;
-  }
   .donut-card {
     width: 120px;
     height: 160px;
+  }
+}
+@media (max-width: 300px) {
+  .donut-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .donut-card {
+    width: 100px;
+    height: 140px;
   }
 }
