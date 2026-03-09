@@ -4,6 +4,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { InternshipsComponent } from '../internships/internships.component';
 import { EducationComponent } from '../education/education.component';
 import { SkillsComponent } from '../skills/skills.component';
+import { CertificatesComponent } from '../certificates/certificates.component';
 
 @Component({
   selector: 'app-resume-main',
@@ -13,6 +14,7 @@ import { SkillsComponent } from '../skills/skills.component';
     InternshipsComponent,
     EducationComponent,
     SkillsComponent,
+    CertificatesComponent,
   ],
   templateUrl: './resume-main.component.html',
   styleUrl: './resume-main.component.css',
