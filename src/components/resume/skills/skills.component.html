@@ -4,12 +4,11 @@
         <h2 class="section-title">Skills</h2>
 
         <div class="skills-grid">
-
             <div class="skill-card" *ngFor="let skill of skills">
                 <img [src]="skill.logo" [alt]="skill.name" />
-                <h3>{{ skill.name }}</h3>
+                <span>{{ skill.name }}</span>
             </div>
-
         </div>
+
     </div>
 </section>
