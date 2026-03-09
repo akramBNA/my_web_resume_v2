@@ -1,1 +1,15 @@
-<p>certificates works!</p>
+<section id="certificates" class="certificates-section">
+    <div class="certificates-container">
+
+        <h2 class="section-title">My Certificates</h2>
+
+        <div class="cert-grid">
+            <div class="cert-card" *ngFor="let file of files"
+                (click)="openFullscreen(file.type === 'pdf' ? file.path : file.path)">
+                <img [src]="file.type === 'pdf' ? file.preview : file.path" [alt]="file.name" />
+                <span>{{ file.name }}</span>
+            </div>
+        </div>
+
+    </div>
+</section>
