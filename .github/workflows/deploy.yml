@@ -32,11 +32,11 @@ jobs:
 
       - name: Replace environment.prod.ts values
         run: |
-            sed -i 's|<EMAILJS_SERVICE_ID>|${{ secrets.EMAILJS_SERVICE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_TEMPLATE_ID>|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_AUTO_REPLY_TEMPLATE_ID>|${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
-            sed -i 's|<EMAILJS_PUBLIC_KEY>|${{ secrets.EMAILJS_PUBLIC_KEY }}|g' src/environments/environment.prod.ts
-            sed -i 's|<GOOGLE_ANALYTICS_ID>|${{ secrets.GOOGLE_ANALYTICS_ID }}|g' src/environments/environment.prod.ts
+          sed -i 's|<EMAILJS_SERVICE_ID>|${{ secrets.EMAILJS_SERVICE_ID }}|g' src/environments/environment.prod.ts
+          sed -i 's|<EMAILJS_TEMPLATE_ID>|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
+          sed -i 's|<EMAILJS_AUTO_REPLY_TEMPLATE_ID>|${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}|g' src/environments/environment.prod.ts
+          sed -i 's|<EMAILJS_PUBLIC_KEY>|${{ secrets.EMAILJS_PUBLIC_KEY }}|g' src/environments/environment.prod.ts
+          sed -i 's|<GOOGLE_ANALYTICS_ID>|${{ secrets.GOOGLE_ANALYTICS_ID }}|g' src/environments/environment.prod.ts
 
       - name: 🏗️ Build Angular App
         run: npm run build -- --configuration=production
@@ -47,4 +47,4 @@ jobs:
           branch: gh-pages
           folder: dist/my_web_resume_v2/browser
           clean: true
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
